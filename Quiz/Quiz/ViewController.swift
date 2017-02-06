@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     
-    let questions: [String] = ["What is  7 +7", "Capital of France"]
+    let questions: [String] = ["What is  7 +7", "Capital of Franceshdjfsdjfnsjnfksjnvkjsdnfkjnd ds f sdfsdjhfsdfj "]
     
     let answers: [String] = ["14", "Paris"]
     

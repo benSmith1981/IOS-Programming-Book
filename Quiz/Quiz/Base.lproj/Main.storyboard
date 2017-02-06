@@ -18,24 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-Sb-QF3">
-                                <state key="normal" title="next Answer"/>
-                                <connections>
-                                    <action selector="answer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMO-C4-57t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-pz-eWi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wC-qM-KEv">
                                 <state key="normal" title="Next question"/>
                                 <connections>
-                                    <action selector="nextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GfA-8N-Fro"/>
+                                    <action selector="nextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oVV-06-sOx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kd-Hb-tGi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3o-3S-bPn">
+                                <state key="normal" title="show answer"/>
+                                <connections>
+                                    <action selector="answer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SvC-3i-I0U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk7-3P-poK">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNy-pv-lOQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-qf-6bv">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,23 +43,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eBx-pz-eWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2bT-Ro-jAD"/>
-                            <constraint firstItem="eBx-pz-eWi" firstAttribute="top" secondItem="CNy-pv-lOQ" secondAttribute="bottom" constant="88" id="7TV-eH-ulo"/>
-                            <constraint firstItem="wp7-Sb-QF3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Cz-iU-6Ng"/>
-                            <constraint firstItem="CNy-pv-lOQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="KxS-sn-vFv"/>
-                            <constraint firstItem="1Kd-Hb-tGi" firstAttribute="top" secondItem="eBx-pz-eWi" secondAttribute="bottom" constant="120" id="Lnq-xl-2TO"/>
-                            <constraint firstItem="wp7-Sb-QF3" firstAttribute="top" secondItem="1Kd-Hb-tGi" secondAttribute="bottom" constant="95" id="Zh4-zS-Q5u"/>
-                            <constraint firstItem="1Kd-Hb-tGi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c1j-A2-y88"/>
-                            <constraint firstItem="CNy-pv-lOQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujg-bj-jeY"/>
+                            <constraint firstItem="j3o-3S-bPn" firstAttribute="top" secondItem="Dk7-3P-poK" secondAttribute="bottom" constant="55.5" id="KZA-s7-ia6"/>
+                            <constraint firstItem="2wC-qM-KEv" firstAttribute="centerX" secondItem="nRe-qf-6bv" secondAttribute="centerX" id="Xss-Qx-3OU"/>
+                            <constraint firstItem="nRe-qf-6bv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="Xx6-gl-eeb"/>
+                            <constraint firstItem="j3o-3S-bPn" firstAttribute="centerX" secondItem="nRe-qf-6bv" secondAttribute="centerX" id="d1e-rh-RXG"/>
+                            <constraint firstItem="Dk7-3P-poK" firstAttribute="top" secondItem="2wC-qM-KEv" secondAttribute="bottom" constant="52" id="gFE-u7-L2Y"/>
+                            <constraint firstItem="2wC-qM-KEv" firstAttribute="top" secondItem="nRe-qf-6bv" secondAttribute="bottom" constant="87" id="k9S-QU-z3X"/>
+                            <constraint firstItem="Dk7-3P-poK" firstAttribute="centerX" secondItem="nRe-qf-6bv" secondAttribute="centerX" id="ofm-b1-iO2"/>
+                            <constraint firstItem="nRe-qf-6bv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ugU-9C-a2u"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answerLabel" destination="1Kd-Hb-tGi" id="JiP-SD-0dt"/>
-                        <outlet property="questionLabel" destination="CNy-pv-lOQ" id="CGk-jb-2fr"/>
+                        <outlet property="answerLabel" destination="Dk7-3P-poK" id="sjh-g4-HnC"/>
+                        <outlet property="questionLabel" destination="nRe-qf-6bv" id="egD-xs-hTb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="105" y="-14"/>
         </scene>
     </scenes>
 </document>
