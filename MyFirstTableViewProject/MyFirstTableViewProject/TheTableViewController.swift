@@ -8,22 +8,69 @@
 
 import UIKit
 
-class TheTableViewController: UITableViewController {
+class TheTableViewController: UITableViewController, UITextFieldDelegate {
 
-    var shoppingList = ["Item1","Shoes", "Clothes","Coffee"]//,"Item2","Item4","Item1","Item1","Item1","Item1","Item1","Item1"]
+//    var shoppingList = ["Item1","Shoes", "Clothes","Coffee"]//,"Item2","Item4","Item1","Item1","Item1","Item1","Item1","Item1"]
 
+    var shoppingItemArray: [ShoppingItem] = [] {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var textFieldOutlet: UITextField!
     
     @IBAction func addItem(_ sender: AnyObject) {
-        shoppingList.append(textFieldOutlet.text!)
+        addTextFromTextField()
         self.tableView.reloadData()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFieldOutlet.resignFirstResponder()
+        addTextFromTextField()
+        return true
+    }
+    
+    func addTextFromTextField() {
+        let theTextFieldText = textFieldOutlet.text
+        let newitem = ShoppingItem.init(name: theTextFieldText!, price: 7)
+        shoppingItemArray.insert(newitem, at: 0)
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        textFieldOutlet.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.setEditing(true, animated: true)
+//        self.tableView.setEditing(true, animated: true)
+        getTheDataFromShoppingService()
+    }
+    
+    func getTheDataFromShoppingService() {
+        //Get the Json Dictionary
+        let JSONDictionary = ShoppingItemService.getData() as NSDictionary
+        
+        //Get the array of dictionaries use Key "ShoppingItems"
+        let arrayOfDictionaries = JSONDictionary["ShoppingItems"] as! NSArray
+        
+        //Iterate the array
+        for shoppingItemDictionary in arrayOfDictionaries {
+            //Cast the item to a dictionary
+            var shoppingItem = shoppingItemDictionary as! Dictionary<String, Any>
+            
+            //name string from dictinoary
+            let nameOfItem = shoppingItem["name"] as! String
+            
+            //price integer
+            let priceOfItem = shoppingItem["price"] as! Int
+            
+            //store dictionary item to our object
+            let currentShoppingItem = ShoppingItem.init(name: nameOfItem, price: priceOfItem)
+            
+            //add our shopping item array to our array of Shopping Items
+            shoppingItemArray.append(currentShoppingItem)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,15 +87,19 @@ class TheTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return shoppingList.count
+        return shoppingItemArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.detailTextLabel?.text = shoppingList[indexPath.row]
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        let currentShoppingItem = shoppingItemArray[indexPath.row]
+        
+        cell.detailTextLabel?.text = currentShoppingItem.name //shoppingList[indexPath.row]
+        
+        cell.textLabel?.text = String(currentShoppingItem.price)//"Row \(indexPath.row)"
+        
 //        cell.imageView?.image = #imageLiteral(resourceName: "Screen1")
         return cell
     }
@@ -65,7 +116,7 @@ class TheTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            shoppingList.remove(at: indexPath.row)
+            shoppingItemArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -74,11 +125,11 @@ class TheTableViewController: UITableViewController {
     
     
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let itemToMove = shoppingList[fromIndexPath.row]
-        shoppingList.remove(at: fromIndexPath.row)
-        shoppingList.insert(itemToMove, at: to.row)
-    }
+//    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//        let itemToMove = shoppingItemArray[fromIndexPath.row]
+//        shoppingItemArray.remove(at: fromIndexPath.row)
+//        shoppingItemArray.insert(itemToMove, at: to.row)
+//    }
  
     
     /*

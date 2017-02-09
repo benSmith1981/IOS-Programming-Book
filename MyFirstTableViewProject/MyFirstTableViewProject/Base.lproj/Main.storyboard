@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ELd-Bg-1sV">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -26,12 +27,15 @@
                                         <action selector="addItem:" destination="vsP-Fg-eW5" eventType="touchUpInside" id="YX7-JU-dWC"/>
                                     </connections>
                                 </button>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVO-Xn-lC5">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVO-Xn-lC5">
                                     <frame key="frameInset" minX="196" minY="8" width="171" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="vsP-Fg-eW5" id="Cys-8c-YdZ"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +74,7 @@
                         <connections>
                             <outlet property="dataSource" destination="vsP-Fg-eW5" id="uG5-Pm-6as"/>
                             <outlet property="delegate" destination="vsP-Fg-eW5" id="66Q-YP-OQf"/>
+                            <outletCollection property="gestureRecognizers" destination="PAO-Dd-Xg4" appends="YES" id="w0H-QN-xYk"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -77,6 +82,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aC-kp-Khs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PAO-Dd-Xg4">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="vsP-Fg-eW5" id="CTe-cA-4f5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="153.37331334332833"/>
         </scene>

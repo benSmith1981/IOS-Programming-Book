@@ -14,6 +14,8 @@
 		BE8335AC1E4B8C6500DB32FB /* MyFirstTableViewProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8335AB1E4B8C6500DB32FB /* MyFirstTableViewProjectTests.swift */; };
 		BE8335B71E4B8C6500DB32FB /* MyFirstTableViewProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8335B61E4B8C6500DB32FB /* MyFirstTableViewProjectUITests.swift */; };
 		BE8335C51E4B942B00DB32FB /* TheTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8335C41E4B942B00DB32FB /* TheTableViewController.swift */; };
+		BE8335C71E4C891200DB32FB /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8335C61E4C891200DB32FB /* ShoppingItem.swift */; };
+		BE8335C91E4C8A3A00DB32FB /* ShoppingItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8335C81E4C8A3A00DB32FB /* ShoppingItemService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BE8335B61E4B8C6500DB32FB /* MyFirstTableViewProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstTableViewProjectUITests.swift; sourceTree = "<group>"; };
 		BE8335B81E4B8C6500DB32FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8335C41E4B942B00DB32FB /* TheTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheTableViewController.swift; sourceTree = "<group>"; };
+		BE8335C61E4C891200DB32FB /* ShoppingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		BE8335C81E4C8A3A00DB32FB /* ShoppingItemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				BE8335961E4B8C6500DB32FB /* AppDelegate.swift */,
 				BE83359A1E4B8C6500DB32FB /* Main.storyboard */,
+				BE8335C41E4B942B00DB32FB /* TheTableViewController.swift */,
+				BE8335C61E4C891200DB32FB /* ShoppingItem.swift */,
+				BE8335C81E4C8A3A00DB32FB /* ShoppingItemService.swift */,
 				BE83359D1E4B8C6500DB32FB /* Assets.xcassets */,
 				BE83359F1E4B8C6500DB32FB /* LaunchScreen.storyboard */,
 				BE8335A21E4B8C6500DB32FB /* Info.plist */,
-				BE8335C41E4B942B00DB32FB /* TheTableViewController.swift */,
 			);
 			path = MyFirstTableViewProject;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8335C91E4C8A3A00DB32FB /* ShoppingItemService.swift in Sources */,
+				BE8335C71E4C891200DB32FB /* ShoppingItem.swift in Sources */,
 				BE8335971E4B8C6500DB32FB /* AppDelegate.swift in Sources */,
 				BE8335C51E4B942B00DB32FB /* TheTableViewController.swift in Sources */,
 			);
@@ -505,6 +513,7 @@
 				BE8335BD1E4B8C6500DB32FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE8335BE1E4B8C6500DB32FB /* Build configuration list for PBXNativeTarget "MyFirstTableViewProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				BE8335C01E4B8C6500DB32FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE8335C11E4B8C6500DB32FB /* Build configuration list for PBXNativeTarget "MyFirstTableViewProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				BE8335C31E4B8C6500DB32FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
