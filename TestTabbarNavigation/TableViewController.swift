@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    //Follow this to reproduce it https://docs.google.com/document/d/1jAiw2TpN6uEmLfptYULq8w40iCfGT8NSXCHgrgpKnz0/edit?usp=sharing
     override func viewDidLoad() {
         super.viewDidLoad()
 
