@@ -17,4 +17,8 @@ class ShoppingItem: NSObject {
         self.name = name
         self.price = price
     }
+    
+    func calculateSoldItems() {
+        
+    }
 }

@@ -18,7 +18,7 @@ func calcAverage(numbers: [Int]) -> Double {
         total += number
     }
     
-    return Double(total) / Double(numberOfNumbers)
+    return Double(total / numberOfNumbers)
 }
 
 print(calcAverage(numbers: numbers))

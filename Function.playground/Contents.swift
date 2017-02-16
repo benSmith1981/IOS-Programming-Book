@@ -9,8 +9,14 @@ for currentNumber in numbers {
     print(total)
 }
 
-var dictionaryOfItems = ["Sports" : "Tennis racket", "footwear" : "shoes", "Clothes" : "jeans"]
+var arrayOfSportsItems = ["Sports" , "Tennis racket", "footwear" , "shoes", "Clothes" , "jeans"]
 
 for (blabla, gogo) in dictionaryOfItems {
     print("\(blabla) in bla bla bla \(gogo)")
+}
+
+var numbers:Int = [1,2,10,11]
+
+for currentNumber in numbers {
+    print(currentNumber)
 }
