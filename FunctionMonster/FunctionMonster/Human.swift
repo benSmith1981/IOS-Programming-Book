@@ -9,13 +9,13 @@
 import Foundation
 
 class Human{
-    var age: Int
     var name: String
+    var type: humanType
     var bones: [Bone]
     
-    init(age: Int, name: String, bones: [Bone]) {
-        self.age = age
+    init(name: String, type: humanType, bones: [Bone]) {
         self.name = name
+        self.type = type
         self.bones = bones
     }
 }

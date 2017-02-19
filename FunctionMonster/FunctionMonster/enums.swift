@@ -9,7 +9,21 @@
 import Foundation
 
 enum boneType {
-    case boyType
-    case manType
-    case womanType
+    case boyBone
+    case manBone
+    case womanBone
+}
+
+
+enum humanType {
+    case boy
+    case man
+    case woman
+}
+
+
+enum Teeth {
+    case sharp
+    case round
+    case plate
 }

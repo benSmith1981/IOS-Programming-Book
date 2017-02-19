@@ -10,32 +10,16 @@ import Foundation
 //Exercise here: https://docs.google.com/document/d/1txrgI2NEimlw3D7Rf_IupzXObUpgsk1IQvRQvLWaTsw/edit?usp=sharing
 
 //create bones
-var boyBones: [Bone] = [ ]
-for loopCounter in 1...10{
-    var bone = Bone.init(type: .boyType, crunched: false)
-    boyBones.insert(bone, at: loopCounter)
+var boyBones: [Bone] = []
+
+for loopCounter in 1...10 {
+    var bone = Bone.init(type: boneType.boyBone, crunched: false)
     boyBones.append(bone)
 }
 
-var womanBones: [Bone] = []
-for i in 1...10{
-    var bone = Bone.init(type: .womanType, crunched: false)
-    womanBones.append(bone)
-}
+var theBoy = Boy.init(name: "Ben", type: humanType.boy, bones: boyBones)
 
-var manBones: [Bone] = []
-for i in 1...10{
-    var bone = Bone.init(type: .manType, crunched: false)
-    manBones.append(bone)
-}
+var BonePod = Monster.init(age: 1000, name: "The Function Monster", monsterTeeth: .sharp)
 
-var aBoy = Boy.init(age: 12, name: "Ben", bones: boyBones)
-var aMan = Man.init(age: 32, name: "Chris", bones: manBones)
-var aWomen = Woman.init(age: 32, name: "Maya", bones: womanBones)
-
-var arrayOfHumans: [Human] = [aBoy, aMan, aWomen]
-
-var monster = Monster.init(age: 1000, name: "The Function Monster")
-
-var bonesReturned = monster.eatHuman(human: aBoy)
-var manyHumansBonesReturned = monster.eatManyHumans(humans: arrayOfHumans)
+var bonesReturned = BonePod.eatHuman(human: theBoy)
+print(bonesReturned)
