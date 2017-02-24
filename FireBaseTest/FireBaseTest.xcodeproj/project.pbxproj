@@ -22,6 +22,21 @@
 		BEB470591E55DDC400DDB543 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEB470581E55DDC400DDB543 /* GoogleService-Info.plist */; };
 		BEB4705B1E55E74E00DDB543 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4705A1E55E74E00DDB543 /* Constants.swift */; };
 		BEB4705D1E55E9CE00DDB543 /* WindmillsDataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4705C1E55E9CE00DDB543 /* WindmillsDataRetriever.swift */; };
+		BEF6851A1E60238B002EEA70 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6850B1E60238B002EEA70 /* DataProvider.swift */; };
+		BEF6851B1E60238B002EEA70 /* Festivals.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF6850C1E60238B002EEA70 /* Festivals.json */; };
+		BEF6851C1E60238B002EEA70 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6850E1E60238B002EEA70 /* Dates.swift */; };
+		BEF6851D1E60238B002EEA70 /* De.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF6850F1E60238B002EEA70 /* De.swift */; };
+		BEF6851E1E60238B002EEA70 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685101E60238B002EEA70 /* Details.swift */; };
+		BEF6851F1E60238B002EEA70 /* En.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685111E60238B002EEA70 /* En.swift */; };
+		BEF685201E60238B002EEA70 /* Es.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685121E60238B002EEA70 /* Es.swift */; };
+		BEF685211E60238B002EEA70 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685131E60238B002EEA70 /* Festival.swift */; };
+		BEF685221E60238B002EEA70 /* Fr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685141E60238B002EEA70 /* Fr.swift */; };
+		BEF685231E60238B002EEA70 /* It.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685151E60238B002EEA70 /* It.swift */; };
+		BEF685241E60238B002EEA70 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685161E60238B002EEA70 /* Location.swift */; };
+		BEF685251E60238B002EEA70 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685171E60238B002EEA70 /* Media.swift */; };
+		BEF685261E60238B002EEA70 /* Nl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685181E60238B002EEA70 /* Nl.swift */; };
+		BEF685271E60238B002EEA70 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685191E60238B002EEA70 /* Types.swift */; };
+		BEF6852A1E60533A002EEA70 /* DetailViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF685291E60533A002EEA70 /* DetailViewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +81,21 @@
 		BEB470581E55DDC400DDB543 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEB4705A1E55E74E00DDB543 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEB4705C1E55E9CE00DDB543 /* WindmillsDataRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindmillsDataRetriever.swift; sourceTree = "<group>"; };
+		BEF6850B1E60238B002EEA70 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		BEF6850C1E60238B002EEA70 /* Festivals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Festivals.json; sourceTree = "<group>"; };
+		BEF6850E1E60238B002EEA70 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		BEF6850F1E60238B002EEA70 /* De.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = De.swift; sourceTree = "<group>"; };
+		BEF685101E60238B002EEA70 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		BEF685111E60238B002EEA70 /* En.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = En.swift; sourceTree = "<group>"; };
+		BEF685121E60238B002EEA70 /* Es.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Es.swift; sourceTree = "<group>"; };
+		BEF685131E60238B002EEA70 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		BEF685141E60238B002EEA70 /* Fr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fr.swift; sourceTree = "<group>"; };
+		BEF685151E60238B002EEA70 /* It.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = It.swift; sourceTree = "<group>"; };
+		BEF685161E60238B002EEA70 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		BEF685171E60238B002EEA70 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		BEF685181E60238B002EEA70 /* Nl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nl.swift; sourceTree = "<group>"; };
+		BEF685191E60238B002EEA70 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		BEF685291E60533A002EEA70 /* DetailViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewTableViewController.swift; sourceTree = "<group>"; };
 		E0C610BAE1BD1E6C161732CE /* Pods_FireBaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +160,8 @@
 		BE3E79021E55A06700A515D1 /* FireBaseTest */ = {
 			isa = PBXGroup;
 			children = (
+				BEF685281E605322002EEA70 /* DetailView */,
+				BEF6850A1E60238B002EEA70 /* DataLayer */,
 				BE3E793C1E55BF9700A515D1 /* List Of windmills */,
 				BE3E793B1E55BF8D00A515D1 /* Map View */,
 				BE3E793A1E55BF7900A515D1 /* Login */,
@@ -195,6 +227,43 @@
 				BE3E79311E55B79600A515D1 /* MyTableViewTableViewController.swift */,
 			);
 			name = "List Of windmills";
+			sourceTree = "<group>";
+		};
+		BEF6850A1E60238B002EEA70 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6850B1E60238B002EEA70 /* DataProvider.swift */,
+				BEF6850C1E60238B002EEA70 /* Festivals.json */,
+				BEF6850D1E60238B002EEA70 /* Model */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		BEF6850D1E60238B002EEA70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEF6850E1E60238B002EEA70 /* Dates.swift */,
+				BEF6850F1E60238B002EEA70 /* De.swift */,
+				BEF685101E60238B002EEA70 /* Details.swift */,
+				BEF685111E60238B002EEA70 /* En.swift */,
+				BEF685121E60238B002EEA70 /* Es.swift */,
+				BEF685131E60238B002EEA70 /* Festival.swift */,
+				BEF685141E60238B002EEA70 /* Fr.swift */,
+				BEF685151E60238B002EEA70 /* It.swift */,
+				BEF685161E60238B002EEA70 /* Location.swift */,
+				BEF685171E60238B002EEA70 /* Media.swift */,
+				BEF685181E60238B002EEA70 /* Nl.swift */,
+				BEF685191E60238B002EEA70 /* Types.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEF685281E605322002EEA70 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				BEF685291E60533A002EEA70 /* DetailViewTableViewController.swift */,
+			);
+			name = DetailView;
 			sourceTree = "<group>";
 		};
 		DCCE1F5EEBFA11274D6B5238 /* Pods */ = {
@@ -319,6 +388,7 @@
 				BE3E790E1E55A06700A515D1 /* LaunchScreen.storyboard in Resources */,
 				BEB470591E55DDC400DDB543 /* GoogleService-Info.plist in Resources */,
 				BE3E790B1E55A06700A515D1 /* Assets.xcassets in Resources */,
+				BEF6851B1E60238B002EEA70 /* Festivals.json in Resources */,
 				BE3E79091E55A06700A515D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,14 +462,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF685251E60238B002EEA70 /* Media.swift in Sources */,
 				BE3E79061E55A06700A515D1 /* LoginViewController.swift in Sources */,
+				BEF6851C1E60238B002EEA70 /* Dates.swift in Sources */,
+				BEF685271E60238B002EEA70 /* Types.swift in Sources */,
+				BEF6851E1E60238B002EEA70 /* Details.swift in Sources */,
 				BE3E79041E55A06700A515D1 /* AppDelegate.swift in Sources */,
+				BEF685241E60238B002EEA70 /* Location.swift in Sources */,
 				BE3E79321E55B79600A515D1 /* MyTableViewTableViewController.swift in Sources */,
 				BE3E79381E55BF4A00A515D1 /* Windmills.swift in Sources */,
+				BEF6851D1E60238B002EEA70 /* De.swift in Sources */,
 				BEB4705D1E55E9CE00DDB543 /* WindmillsDataRetriever.swift in Sources */,
+				BEF685231E60238B002EEA70 /* It.swift in Sources */,
+				BEF685211E60238B002EEA70 /* Festival.swift in Sources */,
 				BE3E79341E55B84900A515D1 /* MapViewController.swift in Sources */,
+				BEF685261E60238B002EEA70 /* Nl.swift in Sources */,
+				BEF685201E60238B002EEA70 /* Es.swift in Sources */,
+				BEF685221E60238B002EEA70 /* Fr.swift in Sources */,
+				BEF6851A1E60238B002EEA70 /* DataProvider.swift in Sources */,
 				BE3E79401E55CB4800A515D1 /* MapAnnotation.swift in Sources */,
+				BEF6852A1E60533A002EEA70 /* DetailViewTableViewController.swift in Sources */,
 				BEB4705B1E55E74E00DDB543 /* Constants.swift in Sources */,
+				BEF6851F1E60238B002EEA70 /* En.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

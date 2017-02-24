@@ -1,33 +1,25 @@
 //
-//  MyTableViewTableViewController.swift
+//  DetailViewTableViewController.swift
 //  FireBaseTest
 //
-//  Created by Ben Smith on 16/02/2017.
+//  Created by Ben Smith on 24/02/2017.
 //  Copyright © 2017 Ben Smith. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class MyTableViewTableViewController: UITableViewController {
+class DetailViewTableViewController: UITableViewController {
 
-    var firebase = FIRDatabase.database().reference()
-    var festivalarray: [Festival] = []
-    var currentFestival: Festival?
+    var festival: Festival?
     
-    var windmillSnapshots: [FIRDataSnapshot] = []
-//    var windmillSnapshots: [FIRDataSnapshot] = [] {
-//        didSet{
-//            self.tableView.reloadData()
-//        }
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(MapViewController.notifyObservers),
-                                               name:  NSNotification.Name(rawValue: "gotFestivalsData" ),
-                                               object: nil)
-        DataProvider.sharedInstance.getFestivalsData()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,39 +31,23 @@ class MyTableViewTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.windmillSnapshots.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-//        let windmillSnapshot: FIRDataSnapshot! = self.windmillSnapshots[indexPath.row]
-//        guard let windmill = windmillSnapshot.value as? [String:String] else { return cell }
+        // Configure the cell...
 
-        
-        let festival = festivalarray[indexPath.row]
-        cell.textLabel?.text = festival.title
-        
         return cell
     }
-    
-    func listenOutForWindmillsData() {
-        
-        var ref = FIRDatabase.database().reference()
-        // Listen for new messages in the Firebase database
-        FIRDatabase.database().reference().child("Windmills").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else { return }
-            strongSelf.windmillSnapshots.append(snapshot)
-            strongSelf.tableView.insertRows(at: [IndexPath(row: strongSelf.windmillSnapshots.count-1, section: 0)], with: .automatic)
-        })
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,19 +84,14 @@ class MyTableViewTableViewController: UITableViewController {
     }
     */
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "detailView", sender: self)
-    }
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "detailView") {
-            let detailView = segue.destination as! DetailViewTableViewController
-            detailView.festival = currentFestival
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
- 
+    */
 
 }

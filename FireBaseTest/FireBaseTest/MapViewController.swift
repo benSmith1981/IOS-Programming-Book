@@ -16,10 +16,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var windmillSnapshots: [FIRDataSnapshot] = []
     let locationManager = CLLocationManager()
 
+    var festivalarray: [Festival] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        
+        // Register to receive notification data
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(MapViewController.notifyObservers),
+                                               name:  NSNotification.Name(rawValue: "gotFestivalsData" ),
+                                               object: nil)
+        DataProvider.sharedInstance.getFestivalsData()
         //set the location to current location
         locationManager.delegate = self
         locationManager.distanceFilter = 1000
@@ -31,8 +38,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         // Get the windmills from Firebase
 //        retrieveWindmillsData()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Dispose of any resources that can be recreated.
     }
     
-    func showWindmillsOnMap(){
+    func showWindmillsOnMapFirebase(){
         
         for windmill in self.windmillSnapshots {
             let windmillSnapshot: FIRDataSnapshot! = windmill
@@ -59,6 +64,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
+    func showFestivalsOnMap(){
+        
+        for festival in festivalarray {
+            
+            if let name = festival.title,
+                let latString = festival.location?.latitude,
+                let longString = festival.location?.longitude {
+                
+                //need to remove the comma
+                let newlatString = latString.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil)
+                let newlongString = latString.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil)
+
+                let lat = Double(newlatString)
+                let long = Double(newlongString)
+
+                var currentFestivalLocation = CLLocationCoordinate2D(latitude: lat!,longitude: long!)
+                let festivalAnnotation = MapAnnotation.init(coordinate: currentFestivalLocation, eigenaar: name)
+                mapView.addAnnotation(festivalAnnotation)
+            }
+            
+            
+        }
+    }
+    
     func retrieveWindmillsData() {
         
         var ref = FIRDatabase.database().reference()
@@ -69,6 +98,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
     }
     
+    
+    // 1
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? MapAnnotation {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                as? MKPinAnnotationView { // 2
+                dequeuedView.annotation = annotation
+                view = dequeuedView
+            } else {
+                // 3
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                //                view.rightCalloutAccessoryView = UIButton(.detailDisclosure) as UIView
+            }
+            return view
+        }
+        return nil
+    }
+    
+    func notifyObservers(notification: NSNotification) {
+        var festivalsDictionary: Dictionary<String,[Festival]> = notification.userInfo as! Dictionary<String, [Festival]>
+        festivalarray = festivalsDictionary["festivals"]!
+        showFestivalsOnMap()
+    }
     /*
     // MARK: - Navigation
 
