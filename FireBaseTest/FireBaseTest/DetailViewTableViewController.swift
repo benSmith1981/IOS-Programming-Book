@@ -8,10 +8,20 @@
 
 import UIKit
 
+enum detailFestivalRows: Int {
+    case titleRow = 0
+    case description
+}
 class DetailViewTableViewController: UITableViewController {
 
     var festival: Festival?
-    
+    var windmill: Windmills?
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.isNavigationBarHidden = false
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,23 +41,31 @@ class DetailViewTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        switch indexPath.row {
+        case detailFestivalRows.titleRow.rawValue:
+            cell.textLabel?.text = festival?.title
+        case detailFestivalRows.description.rawValue:
+            cell.textLabel?.text = festival?.details?.en?.shortdescription
+        default:
+            cell.textLabel?.text = ""
+        }
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

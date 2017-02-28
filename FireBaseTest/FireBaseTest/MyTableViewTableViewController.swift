@@ -12,22 +12,27 @@ import Firebase
 class MyTableViewTableViewController: UITableViewController {
 
     var firebase = FIRDatabase.database().reference()
-    var festivalarray: [Festival] = []
+    var festivalarray: [Festival] = [] {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     var currentFestival: Festival?
-    
-    var windmillSnapshots: [FIRDataSnapshot] = []
-//    var windmillSnapshots: [FIRDataSnapshot] = [] {
-//        didSet{
-//            self.tableView.reloadData()
-//        }
-//    }
+
+    var windmillArray: [Windmills] = [] {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
+    var currentWindmill: Windmills?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(MapViewController.notifyObservers),
-                                               name:  NSNotification.Name(rawValue: "gotFestivalsData" ),
+                                               selector: #selector(MyTableViewTableViewController.notifyObservers),
+                                               name:  NSNotification.Name(rawValue: "gotWindmillsData" ),
                                                object: nil)
-        DataProvider.sharedInstance.getFestivalsData()
+        WindmillsDataRetriever.sharedInstance.retrieveWindmillsData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,35 +49,19 @@ class MyTableViewTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.windmillSnapshots.count
+        return self.windmillArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-//        let windmillSnapshot: FIRDataSnapshot! = self.windmillSnapshots[indexPath.row]
-//        guard let windmill = windmillSnapshot.value as? [String:String] else { return cell }
-
         
-        let festival = festivalarray[indexPath.row]
-        cell.textLabel?.text = festival.title
+        let windmill = windmillArray[indexPath.row]
+        cell.textLabel?.text = windmill.eigenaar
         
         return cell
     }
     
-    func listenOutForWindmillsData() {
-        
-        var ref = FIRDatabase.database().reference()
-        // Listen for new messages in the Firebase database
-        FIRDatabase.database().reference().child("Windmills").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else { return }
-            strongSelf.windmillSnapshots.append(snapshot)
-            strongSelf.tableView.insertRows(at: [IndexPath(row: strongSelf.windmillSnapshots.count-1, section: 0)], with: .automatic)
-        })
-    }
-    
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -109,6 +98,7 @@ class MyTableViewTableViewController: UITableViewController {
     */
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentWindmill = windmillArray[indexPath.row]
         self.performSegue(withIdentifier: "detailView", sender: self)
     }
     
@@ -118,9 +108,13 @@ class MyTableViewTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailView") {
             let detailView = segue.destination as! DetailViewTableViewController
-            detailView.festival = currentFestival
+            detailView.windmill = currentWindmill
         }
     }
  
-
+    func notifyObservers(notification: NSNotification) {
+        var windmillsDictionary: Dictionary<String,[Windmills]> = notification.userInfo as! Dictionary<String, [Windmills]>
+        windmillArray = windmillsDictionary["windmills"]!
+    }
+    
 }

@@ -10,12 +10,35 @@ import UIKit
 import MapKit
 
 class MapAnnotation: NSObject, MKAnnotation {
-    var eigenaar : String?
+    var festival: Festival
+
+    //required for call out
+    var title: String?
+    var subtitle: String?
     var coordinate: CLLocationCoordinate2D
     
-    init(coordinate: CLLocationCoordinate2D, eigenaar: String) {
-        self.eigenaar = eigenaar
-        self.coordinate = coordinate
+    init(festival: Festival) {
+
+        self.festival = festival
+        self.title = festival.title
+        
+        if let latString = festival.location?.latitude,
+            let longString = festival.location?.longitude {
+            //need to remove the comma
+            let newlatString = latString.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil)
+            let newlongString = longString.replacingOccurrences(of: ",", with: ".", options: .literal, range: nil)
+            
+            let lat = Double(newlatString)
+            let long = Double(newlongString)
+            
+            self.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+        } else {
+            self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        }
+        self.subtitle = festival.details?.en?.shortdescription
+        
+        super.init()
+
     }
 
 }

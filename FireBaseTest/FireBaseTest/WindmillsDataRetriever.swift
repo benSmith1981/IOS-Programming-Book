@@ -19,16 +19,15 @@ class WindmillsDataRetriever {
 
     func retrieveWindmillsData() {
 
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        firebase.child("Windmills").observeSingleEvent(of: .value, with: { (snapshot) in
+//        let userID = FIRAuth.auth()?.currentUser?.uid
+        firebase.observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
-            let dict = snapshot.value as? NSDictionary
-            var view = UIView.init()
-            print(view.alpha)
-//            let databaseArray = Array(dict)
-//            for row in databaseArray {
-//                print("row")
-//            }
+            if let dataDict = snapshot.value as? NSDictionary, let data = dataDict["Windmills"] as? NSArray {
+                let windmills = Windmills.modelsFromDictionaryArray(array: data)
+                let windmillsData = ["windmills": windmills]
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "gotWindmillsData"), object: self , userInfo: windmillsData)
+            }
+            
         }) { (error) in
             print(error.localizedDescription)
         }

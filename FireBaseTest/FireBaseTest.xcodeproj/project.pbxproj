@@ -19,6 +19,7 @@
 		BE3E79341E55B84900A515D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E79331E55B84900A515D1 /* MapViewController.swift */; };
 		BE3E79381E55BF4A00A515D1 /* Windmills.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E79361E55BF4A00A515D1 /* Windmills.swift */; };
 		BE3E79401E55CB4800A515D1 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E793F1E55CB4800A515D1 /* MapAnnotation.swift */; };
+		BE5F20971E61A88000866ACD /* WindmillAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F20961E61A87F00866ACD /* WindmillAnnotation.swift */; };
 		BEB470591E55DDC400DDB543 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEB470581E55DDC400DDB543 /* GoogleService-Info.plist */; };
 		BEB4705B1E55E74E00DDB543 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4705A1E55E74E00DDB543 /* Constants.swift */; };
 		BEB4705D1E55E9CE00DDB543 /* WindmillsDataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4705C1E55E9CE00DDB543 /* WindmillsDataRetriever.swift */; };
@@ -78,6 +79,7 @@
 		BE3E79331E55B84900A515D1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BE3E79361E55BF4A00A515D1 /* Windmills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windmills.swift; sourceTree = "<group>"; };
 		BE3E793F1E55CB4800A515D1 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		BE5F20961E61A87F00866ACD /* WindmillAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindmillAnnotation.swift; sourceTree = "<group>"; };
 		BEB470581E55DDC400DDB543 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEB4705A1E55E74E00DDB543 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEB4705C1E55E9CE00DDB543 /* WindmillsDataRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindmillsDataRetriever.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				BE3E79331E55B84900A515D1 /* MapViewController.swift */,
 				BE3E793F1E55CB4800A515D1 /* MapAnnotation.swift */,
+				BE5F20961E61A87F00866ACD /* WindmillAnnotation.swift */,
 			);
 			name = "Map View";
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				BE3E79401E55CB4800A515D1 /* MapAnnotation.swift in Sources */,
 				BEF6852A1E60533A002EEA70 /* DetailViewTableViewController.swift in Sources */,
 				BEB4705B1E55E74E00DDB543 /* Constants.swift in Sources */,
+				BE5F20971E61A88000866ACD /* WindmillAnnotation.swift in Sources */,
 				BEF6851F1E60238B002EEA70 /* En.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
