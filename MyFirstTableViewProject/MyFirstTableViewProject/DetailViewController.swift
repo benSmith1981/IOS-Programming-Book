@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var theItem: ShoppingItem?
+    var theItem: ShoppingItems?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!

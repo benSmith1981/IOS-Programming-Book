@@ -25,7 +25,7 @@ class ShoppingListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setDataForTableCell(shoppingListItem: ShoppingItem) {
+    func setDataForTableCell(shoppingListItem: ShoppingItems) {
         self.titleLabel?.text = shoppingListItem.name
         self.shoppingListImageView.image = UIImage.init(named: "Screen1")
         self.detailTextView.text = "Price: \(shoppingListItem.price)"
